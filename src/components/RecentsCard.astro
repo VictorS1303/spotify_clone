@@ -1,0 +1,58 @@
+---
+// export interface Props {
+//     artistImages: string[];
+//     artists: string[];
+// }
+
+// const { artistImages, artists } = Astro.props as Props;
+
+const artists = [
+    "Turbulence",
+    "Kabaka Pyramid",
+    "Bremer/McCoy",
+    "Don Carlos",
+    "Jahneration",
+    "Culture",
+    "Reggae Mix",
+    "Vibronics",
+];
+
+const images = ["images/test_image.jpg"];
+---
+
+<div class="container recent-cards-container">
+    {
+        artists.map((artist) => (
+            <div class="recent-card">
+                <h3>{artist}</h3>
+            </div>
+        ))
+    }
+</div>
+
+<style>
+    .container.recent-cards-container {
+        position: relative;
+        left: 52%;
+        transform: translateX(-50%);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        gap: 20px;
+        width: 80%;
+        margin-top: 120px;
+    }
+
+    .recent-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--recents-card-background-color);
+        height: 50px;
+        width: 80%;
+        border-radius: calc(var(--base-border-radius) * 1.5);
+        color: var(--heading-color);
+        cursor: pointer;
+    }
+</style>
