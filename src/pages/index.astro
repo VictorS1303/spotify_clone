@@ -1,6 +1,7 @@
 ---
 import "../css/style.css";
 import RecentsSection from "../components/RecentsSection.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <!DOCTYPE html>
@@ -11,6 +12,8 @@ import RecentsSection from "../components/RecentsSection.astro";
 		<title>Document</title>
 	</head>
 	<body>
-		<RecentsSection />
+		<Layout>
+			<RecentsSection />
+		</Layout>
 	</body>
 </html>
